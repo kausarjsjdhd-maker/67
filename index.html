@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///C:/Users/VtkKo/Downloads/Untitled-18%20(2).html -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Premium Travel</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Arial;
+}
+
+body {
+  background: #05070f;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ===== SOFT LIGHT BACKGROUND ===== */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0,255,200,0.12), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(0,150,255,0.10), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(180,0,255,0.10), transparent 45%);
+  filter: blur(40px);
+}
+
+/* ===== NAV ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 10%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+
+  backdrop-filter: blur(20px);
+  background: rgba(0,0,0,0.3);
+}
+
+nav span {
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  position: relative;
+  z-index: 2;
+}
+
+/* TEXT */
+.hero-text {
+  max-width: 520px;
+}
+
+.hero-text h1 {
+  font-size: 72px;
+  letter-spacing: -3px;
+  line-height: 1;
+}
+
+.hero-text h1 span {
+  color: #00e6c3;
+}
+
+.hero-text p {
+  margin-top: 15px;
+  opacity: 0.7;
+  font-size: 18px;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 25px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== IMAGE BLOCK ===== */
+.hero-img {
+  width: 520px;
+  height: 380px;
+  border-radius: 30px;
+  background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") center/cover;
+  position: relative;
+
+  transform: translateY(20px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.5));
+}
+
+/* float animation */
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* ===== CARDS ===== */
+.cards {
+  display: flex;
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.card {
+  width: 160px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  transition: 0.3s;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards;
+}
+
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: rgba(0,230,195,0.4);
+}
+
+.card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 10px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* ===== FADE ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 44px;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 260px;
+  }
+
+  .cards {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- NAV -->
+<nav>
+  <span>Travel</span>
+  <span>Explore • Book • Experience</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+
+  <!-- LEFT -->
+  <div class="hero-text">
+    <h1>Explore <span>Dream</span> World</h1>
+    <p>
+      Premium travel experience with Apple-level design and smooth UX.
+    </p>
+
+    <button class="btn">Book Now</button>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="./index_files/photo-1501785888041-af3ef285b470">
+        <p>Mountains</p>
+      </div>
+
+      <div class="card">
+        <img src="./index_files/photo-1500530855697-b586d89ba3ee">
+        <p>Beach</p>
+      </div>
+
+      <div class="card">
+        <img src="./index_files/photo-1528127269322-539801943592">
+        <p>City</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="hero-img"></div>
+
+</div>
+
+
+</body></html>
